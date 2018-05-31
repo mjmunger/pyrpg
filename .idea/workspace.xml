@@ -41,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="390">
-                <caret line="116" column="517" lean-forward="true" selection-start-line="116" selection-start-column="517" selection-end-line="116" selection-end-column="517" />
+              <first_editor relative-caret-position="660">
+                <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
               </first_editor>
               <second_editor />
             </state>
@@ -66,6 +66,7 @@
       <find>self.password_length</find>
       <find>random</find>
       <find>secret.choice</find>
+      <find>rela</find>
     </findStrings>
     <replaceStrings>
       <replace>list_</replace>
@@ -229,8 +230,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="390">
-            <caret line="116" column="517" lean-forward="true" selection-start-line="116" selection-start-column="517" selection-end-line="116" selection-end-column="517" />
+          <first_editor relative-caret-position="660">
+            <caret line="132" lean-forward="true" selection-start-line="132" selection-end-line="132" />
           </first_editor>
           <second_editor />
         </state>

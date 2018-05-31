@@ -127,7 +127,20 @@ PyRPG requires Python 3.6 above because it uses the `secrets` module for cryptog
 
 If you do not have Python 3.6, you can download and install it from [python.org](https://www.python.org/downloads/).
 
-### Debian specific installation.
+### Installation script
+
+For your copy / paste pleasure. 
+
+```
+sudo su
+cd /usr/src/
+git clone https://github.com/mjmunger/pyrpg.git
+ln -s /usr/src/pyrpg/prpg.py /usr/local/bin/prpg
+chmod +x /usr/local/bin/prpg
+exit
+```
+
+### Debian specific installation of Python 3.6.
 
 Debian stretch does not yet have Python 3.6 in an repository package, therefore, you can compile from scratch:
 
