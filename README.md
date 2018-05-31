@@ -8,9 +8,6 @@ PyRPG requires Python 3.6 above because it uses the `secrets` module for cryptog
 
 If you do not have Python 3.6, you can download and install it from [python.org](https://www.python.org/downloads/).
 
-Once you have Python 3.6 downloaded, you need to make sure you have the correct libraries installed:
-* [secrets]()
-
 ### Debian specific installation.
 
 Debian stretch does not yet have Python 3.6 in an repository package, therefore, you can compile from scratch:
@@ -28,10 +25,7 @@ make
 make install
 ```
 
-Install secrets:
-```
-sudo pip3 install secrets
-```
+Secrets is part of the core library as of v3.6, so there is nothing else to install.
 
 \* Note: "cryptographically secure" is a somewhat relative term. The secrets module actually "[...provides access to the most secure source of randomness that your operating system provides](https://docs.python.org/3/library/secrets.html#random-numbers)". Thus, if you do not have a good source of randomness on your computer, you will not get good secure numbers. This is entirely dependent on [your chipset](https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide). 
 ## Usage:
