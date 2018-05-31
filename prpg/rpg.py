@@ -1,4 +1,4 @@
-import random
+import secrets
 import mmap
 import time
 import os
@@ -234,9 +234,71 @@ For support, problems, and issues, file an issue on github:
 
         self.list_final_charset = character_set
 
+    def get_random_character(self, p):
+
+        if p == "u":
+            return secrets.choice(self.list_upper)
+
+        if p == "l":
+            return secrets.choice(self.list_lower)
+
+        if p == "s":
+            return secrets.choice(self.list_symbol)
+
+        if p == "d":
+            return secrets.choice(self.list_digits)
+
+        if p == "b":
+            return secrets.choice(self.list_brackets)
+
+        if p == "m":
+            return secrets.choice(self.list_minus)
+
+        if p == "n":
+            return secrets.choice(self.list_underline)
+
+        if p == "p":
+            return secrets.choice(self.list_punctuation)
+
+        if p == "a":
+            return secrets.choice(self.list_lower + self.list_digits)
+
+        if p == "A":
+            return secrets.choice(self.list_upper + self.list_digits)
+
+        if p == "M":
+            return secrets.choice(self.list_lower + self.list_digits + self.list_upper)
+
+        if p == "h":
+            return secrets.choice(self.list_digits + self.list_lower[:6])
+
+        if p == "H":
+            return secrets.choice(self.list_digits + self.list_upper[:6])
+
+        if p == "v":
+            return secrets.choice(self.list_vowels_lower)
+
+        if p == "V":
+            return secrets.choice(self.list_vowels_upper)
+
+        if p == "Z":
+            return secrets.choice(self.list_vowels_lower + self.list_vowels_upper)
+
+        if p == "c":
+            return secrets.choice(self.list_consonant_lower)
+
+        if p == "C":
+            return secrets.choice(self.list_consonant_upper)
+
+        if p == "z":
+            return secrets.choice(self.list_consonant_lower + self.list_consonant_upper)
+
+        return p
+
     def generate_pattern_based_password(self):
         chars = []
         repeat = 0
+        last_pattern = None
 
         pattern = iter(self.password_pattern)
 
@@ -245,74 +307,33 @@ For support, problems, and issues, file an issue on github:
             if p == '\\':
                 p = next(pattern)
                 chars.append(p)
+                last_pattern = p
+                if self.debug:
+                    print("Last pattern: %s" % p)
+                continue
 
             # Repeat characters
             if p == "{":
-                p = next(pattern)
-                repeat = int(p)
+
+                r = ""
+                while True:
+                    p = next(pattern)
+                    if p == "}":
+                        break
+                    r = r + p
+
+                repeat = int(r)
 
                 for i in range(1, repeat):
-                    chars.append(p)
+                    chars.append(self.get_random_character(last_pattern))
 
-                # skip the last }
-                p = next(pattern)
+                continue
 
-            if p == "u":
-                chars.append(random.choice(self.list_upper))
+            last_pattern = p
+            if self.debug:
+                print("Last pattern: %s" % p)
+            chars.append(self.get_random_character(p))
 
-            if p == "l":
-                chars.append(random.choice(self.list_lower))
-
-            if p == "s":
-                chars.append(random.choice(self.list_symbol))
-
-            if p == "d":
-                chars.append(random.choice(self.list_digits))
-
-            if p == "b":
-                chars.append(random.choice(self.list_brackets))
-
-            if p == "m":
-                chars.append(random.choice(self.list_minus))
-
-            if p == "n":
-                chars.append(random.choice(self.list_underline))
-
-            if p == "p":
-                chars.append(random.choice(self.list_punctuation))
-
-            if p == "a":
-                chars.append(random.choice(self.list_lower + self.list_digits))
-
-            if p == "A":
-                chars.append(random.choice(self.list_upper + self.list_digits))
-
-            if p == "M":
-                chars.append(random.choice(self.list_lower + self.list_digits + self.list_upper))
-
-            if p == "h":
-                chars.append(random.choice(self.list_digits + self.list_lower[:6]))
-
-            if p == "H":
-                chars.append(random.choice(self.list_digits + self.list_upper[:6]))
-
-            if p == "v":
-                chars.append(random.choice(self.list_vowels_lower))
-
-            if p == "V":
-                chars.append(random.choice(self.list_vowels_upper))
-
-            if p == "Z":
-                chars.append(random.choice(self.list_vowels_lower + self.list_vowels_upper))
-
-            if p == "c":
-                chars.append(random.choice(self.list_consonant_lower))
-
-            if p == "C":
-                chars.append(random.choice(self.list_consonant_upper))
-
-            if p == "z":
-                chars.append(random.choice(self.list_consonant_lower + self.list_consonant_upper))
 
             # Default is to ignore the item.
 
@@ -321,7 +342,7 @@ For support, problems, and issues, file an issue on github:
     def generate_random_password(self):
         chars = []
         for x in range(0, self.password_length):
-            chars.append(random.choice(self.list_final_charset))
+            chars.append(secrets.choice(self.list_final_charset))
 
         return "".join(chars)
 
@@ -349,7 +370,7 @@ For support, problems, and issues, file an issue on github:
         words = []
 
         for x in range(0, self.password_length):
-            words.append(random.choice(index))
+            words.append(secrets.choice(index))
 
         return " ".join(words)
 
