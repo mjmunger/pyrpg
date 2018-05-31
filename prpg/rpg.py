@@ -120,91 +120,91 @@ class Rpg:
 
     def show_help(self):
         print("""
-        PyRPG - The Python random password generator
+PyRPG - The Python random password generator
 
-        Usage:
-        prpg [character set options] [length | pattern]
+Usage:
+prpg [character set options] [length | pattern]
 
-        Character set options:
-        u    Include upper case characters: A-Z
-        l    Include lower case characters: a-z
-        s    Include symbol characters: !@#$%^&*
-        d    Include digits: 0-9
-        b    Include bracket characters: {}[]()<>
-        m    Include the minus character: -
-        n    Include the underscore character: _
+Character set options:
+u    Include upper case characters: A-Z
+l    Include lower case characters: a-z
+s    Include symbol characters: !@#$%^&*
+d    Include digits: 0-9
+b    Include bracket characters: {}[]()<>
+m    Include the minus character: -
+n    Include the underscore character: _
 
-        Extended options:
-        w    Generate a password based on words
-        p    Generate the password based on the given pattern (requires the pattern argument)
-        e    Exclude look-alike characters (homoglyphs): 1iIO0
+Extended options:
+w    Generate a password based on words
+p    Generate the password based on the given pattern (requires the pattern argument)
+e    Exclude look-alike characters (homoglyphs): 1iIO0
 
-        Fun stuff:
-        t    Show how long it took to generate the passwords.
+Fun stuff:
+t    Show how long it took to generate the passwords.
 
-        For all character sets (except pattern generation, "p"), you must specify the password length as the second
-        argument. For all options except w and p, the length specification will specify the string character length. For
-        w (word based password), the length argument will specify the number of words in the resulting password.
+For all character sets (except pattern generation, "p"), you must specify the password length as the second
+argument. For all options except w and p, the length specification will specify the string character length. For
+w (word based password), the length argument will specify the number of words in the resulting password.
 
-        When p is specified, the second argument must be a pattern, not a length. (See "Pattern" below).
+When p is specified, the second argument must be a pattern, not a length. (See "Pattern" below).
 
-        Pattern:
+Pattern:
 
-        The pattern defines the layout of the resulting password. Each character in the pattern dictates a character
-        class that will be substituted at that position in the pattern. Characters that do not represent a given character
-        class will be substituted as-is.
+The pattern defines the layout of the resulting password. Each character in the pattern dictates a character
+class that will be substituted at that position in the pattern. Characters that do not represent a given character
+class will be substituted as-is.
 
-        For example:
+For example:
 
-          uull-dddd will result in:
-            Two upper case characters for the first two characters of the pattern, followed by:
-            Two lower case characters for the next two characters, followed by:
-            "-" followed by:
-            Four digits
+  uull-dddd will result in:
+    Two upper case characters for the first two characters of the pattern, followed by:
+    Two lower case characters for the next two characters, followed by:
+    "-" followed by:
+    Four digits
 
-        Use the following place holders to define your pattern:
+Use the following place holders to define your pattern:
 
-        Base class place holders:
+Base class place holders:
 
-        u  Upper case characters: A-Z 
-        l  Lower case characters: a-z
-        s  Symbols: !@#$%^&*
-        d  Digits: 0-9
-        b  Bracket characters: {}[]()<>
-        m  The minus character: -
-        n  The underscore character: _
-        p  Punctuation: ,.;:
+u  Upper case characters: A-Z 
+l  Lower case characters: a-z
+s  Symbols: !@#$%^&*
+d  Digits: 0-9
+b  Bracket characters: {}[]()<>
+m  The minus character: -
+n  The underscore character: _
+p  Punctuation: ,.;:
 
-        Combination and sub-class place holders:
+Combination and sub-class place holders:
 
-        a  lower-case alphanumeric: a-z and 0-9
-        A  Upper-case alphanumeric: A-Z and 0-9
-        M  Mixed-case alphanumeric: a-z, A-Z, and 0-9
-        h  Lower case hex character: 0-9 and a-f
-        H  Upper case hex character: 0-9 and A-F
-        v  Lower case vowel: aeiou
-        V  Upper case vowel: AEIOU
-        Z  Mixed case vowel: AEIOU and aeiou
-        c  Lower case consonant: bcdfghjklmnpqrstvwxyz
-        C  Upper case consonant: BCDFGHJKLMNPQRSTVWXYZ
-        z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
+a  lower-case alphanumeric: a-z and 0-9
+A  Upper-case alphanumeric: A-Z and 0-9
+M  Mixed-case alphanumeric: a-z, A-Z, and 0-9
+h  Lower case hex character: 0-9 and a-f
+H  Upper case hex character: 0-9 and A-F
+v  Lower case vowel: aeiou
+V  Upper case vowel: AEIOU
+Z  Mixed case vowel: AEIOU and aeiou
+c  Lower case consonant: bcdfghjklmnpqrstvwxyz
+C  Upper case consonant: BCDFGHJKLMNPQRSTVWXYZ
+z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
 
-        Special placeholders
-        \    Escapes the proceeding character, and tells the generator to print it "as-is".
-        {n}  Print the previous character n times.
+Special placeholders
+\    Escapes the proceeding character, and tells the generator to print it "as-is".
+{n}  Print the previous character n times.
 
-        EXAMPLES
+EXAMPLES
 
-        Random MAC address:
+Random MAC address:
 
-          ./prpg.py p 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:'
+  ./prpg.py p 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}'
 
-        Random three word pass phrase:
+Random three word pass phrase:
 
-          ./prpg.py w 3
+  ./prpg.py w 3
 
-        For support, problems, and issues, file an issue on github:
-          https://github.com/mjmunger/pyrpg
+For support, problems, and issues, file an issue on github:
+  https://github.com/mjmunger/pyrpg
 
         """)
 
