@@ -2,7 +2,6 @@ import secrets
 import mmap
 import time
 import os
-import importlib
 
 
 class Rpg:
@@ -122,10 +121,7 @@ class Rpg:
             print("use_underline: %s" % self.use_underline)
             print("use_pattern: %s" % self.use_pattern)
 
-
         # Sanity checking
-
-
 
         if not len(options) == 3:
             self.error_out("You must specify a length or pattern for your password")
@@ -138,7 +134,6 @@ class Rpg:
         else:
             self.password_length = int(options[2])
 
-
     def error_out(self, message):
         print(message)
         self.show_help()
@@ -149,7 +144,7 @@ class Rpg:
 PyRPG - The Python random password generator
 
 Usage:
-prpg [character set options] [length | pattern]
+prpg [character set options | magic class] [length | pattern]
 
 Character set options:
 u    Include upper case characters: A-Z
