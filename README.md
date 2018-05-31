@@ -33,6 +33,7 @@ Secrets is part of the core library as of v3.6, so there is nothing else to inst
 
 ### Character set options:
 
+```
 u    Include upper case characters: A-Z
 l    Include lower case characters: a-z
 s    Include symbol characters: !@#$%^&*
@@ -40,14 +41,20 @@ d    Include digits: 0-9
 b    Include bracket characters: {}[]()<>
 m    Include the minus character: -
 n    Include the underscore character: _
+```
 
-Extended options:
+### Extended options:
+```
 w    Generate a password based on words
 p    Generate the password based on the given pattern (requires the pattern argument)
 e    Exclude look-alike characters (homoglyphs): 1iIO0
+```
 
-Fun stuff:
+### Fun stuff:
+```
 t    Show how long it took to generate the passwords.
+g    Show debugging information
+```
 
 For all character sets (except pattern generation, "p"), you must specify the password length as the second
 argument. For all options except w and p, the length specification will specify the string character length. For
@@ -55,7 +62,7 @@ w (word based password), the length argument will specify the number of words in
 
 When p is specified, the second argument must be a pattern, not a length. (See "Pattern" below).
 
-Pattern:
+### Patterns:
 
 The pattern defines the layout of the resulting password. Each character in the pattern dictates a character
 class that will be substituted at that position in the pattern. Characters that do not represent a given character
@@ -63,16 +70,17 @@ class will be substituted as-is.
 
 For example:
 
-  uull-dddd will result in:
-    Two upper case characters for the first two characters of the pattern, followed by:
-    Two lower case characters for the next two characters, followed by:
-    "-" followed by:
-    Four digits
+`uull-dddd` will result in:
+
+* Two upper case characters for the first two characters of the pattern, followed by:
+* Two lower case characters for the next two characters, followed by:
+* "-" followed by:
+* Four digits
 
 Use the following place holders to define your pattern:
 
-Base class place holders:
-
+*Base class place holders:*
+```
 u  Upper case characters: A-Z 
 l  Lower case characters: a-z
 s  Symbols: !@#$%^&*
@@ -81,9 +89,11 @@ b  Bracket characters: {}[]()<>
 m  The minus character: -
 n  The underscore character: _
 p  Punctuation: ,.;:
+```
 
-Combination and sub-class place holders:
+*Combination and sub-class place holders:*
 
+```
 a  lower-case alphanumeric: a-z and 0-9
 A  Upper-case alphanumeric: A-Z and 0-9
 M  Mixed-case alphanumeric: a-z, A-Z, and 0-9
@@ -95,20 +105,39 @@ Z  Mixed case vowel: AEIOU and aeiou
 c  Lower case consonant: bcdfghjklmnpqrstvwxyz
 C  Upper case consonant: BCDFGHJKLMNPQRSTVWXYZ
 z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
+```
 
-Special placeholders
+*Special placeholders*
+```
 \    Escapes the proceeding character, and tells the generator to print it "as-is".
 {n}  Print the previous character n times.
+```
 
-EXAMPLES
+## EXAMPLES
 
-Random MAC address:
+### Random password for a website, and show the timing
 
-  ./prpg.py p 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}'
+```
+./prppg.py slut 16
+```
 
-Random three word pass phrase:
+### Random MAC address:
+```
+./prpg.py p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
+```
 
-  ./prpg.py w 3
+### Random three word pass phrase:
+```
+./prpg.py w 3
+```
+
+### Escape the h so it starts with h
+
+```
+./prpg.py p '\hu{12}' 
+```
+
+# Support and Issues
 
 For support, problems, and issues, file an issue on github:
   https://github.com/mjmunger/pyrpg 
