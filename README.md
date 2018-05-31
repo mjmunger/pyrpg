@@ -1,4 +1,4 @@
-# PyRPG - The Python random password generator
+# PyRPG - Secure Python random password generator
 
 Generate cryptographically secure random passwords with specified character sets, patterns, or lengths.
 
