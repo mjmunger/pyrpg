@@ -2,32 +2,32 @@
 
 Generate cryptographically secure random passwords with specified character sets, patterns, or lengths.
 
-## Installation
+## TL;DR. How do I make passwords?
 
-PyRPG requires Python 3.6 above because it uses the `secrets` module for cryptographically secure random numbers*.
+Here are examples for you, Captain Impatient...
 
-If you do not have Python 3.6, you can download and install it from [python.org](https://www.python.org/downloads/).
+### Random password for a website, and show the timing
 
-### Debian specific installation.
-
-Debian stretch does not yet have Python 3.6 in an repository package, therefore, you can compile from scratch:
-
-Prep your system:
 ```
-apt build-dep python
-apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+./prpg.py slut 16
 ```
 
-Download Python 3.6 for Linux, and extract to /usr/src/, then:
+### Random MAC address:
 ```
-./configure
-make
-make install
+./prpg.py p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
 ```
 
-Secrets is part of the core library as of v3.6, so there is nothing else to install.
+### Random three word pass phrase:
+```
+./prpg.py w 3
+```
 
-\* Note: "cryptographically secure" is a somewhat relative term. The secrets module actually "[...provides access to the most secure source of randomness that your operating system provides](https://docs.python.org/3/library/secrets.html#random-numbers)". Thus, if you do not have a good source of randomness on your computer, you will not get good secure numbers. This is entirely dependent on [your chipset](https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide). 
+### Escape the h so it starts with h
+
+```
+./prpg.py p '\hu{12}' 
+```
+ 
 ## Usage:
 `prpg [character set options] [length | pattern]`
 
@@ -112,35 +112,39 @@ z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
 \    Escapes the proceeding character, and tells the generator to print it "as-is".
 {n}  Print the previous character n times.
 ```
+# Security
 
-## EXAMPLES
-
-### Random password for a website, and show the timing
-
-```
-./prpg.py slut 16
-```
-
-### Random MAC address:
-```
-./prpg.py p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
-```
-
-### Random three word pass phrase:
-```
-./prpg.py w 3
-```
-
-### Escape the h so it starts with h
-
-```
-./prpg.py p '\hu{12}' 
-```
+"Cryptographically secure" is a somewhat relative term. The secrets module actually "[...provides access to the most secure source of randomness that your operating system provides](https://docs.python.org/3/library/secrets.html#random-numbers)". Thus, if you do not have a good source of randomness on your computer, you will not get good secure numbers. This is entirely dependent on [your chipset](https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide).
 
 # Support and Issues
 
 For support, problems, and issues, file an issue on github:
   https://github.com/mjmunger/pyrpg 
+
+## Installation
+
+PyRPG requires Python 3.6 above because it uses the `secrets` module for cryptographically secure random numbers*.
+
+If you do not have Python 3.6, you can download and install it from [python.org](https://www.python.org/downloads/).
+
+### Debian specific installation.
+
+Debian stretch does not yet have Python 3.6 in an repository package, therefore, you can compile from scratch:
+
+Prep your system:
+```
+apt build-dep python
+apt-get install libreadline-gplv2-dev libncursesw5-dev libssl-dev libsqlite3-dev tk-dev libgdbm-dev libc6-dev libbz2-dev
+```
+
+Download Python 3.6 for Linux, and extract to /usr/src/, then:
+```
+./configure
+make
+make install
+```
+
+Secrets is part of the core library as of v3.6, so there is nothing else to install.
 
 ## References
 * [Python secrets](https://docs.python.org/3/library/secrets.html#random-numbers)

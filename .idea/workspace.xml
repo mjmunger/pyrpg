@@ -41,8 +41,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="350">
-                <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+              <first_editor relative-caret-position="390">
+                <caret line="116" column="517" lean-forward="true" selection-start-line="116" selection-start-column="517" selection-end-line="116" selection-end-column="517" />
               </first_editor>
               <second_editor />
             </state>
@@ -229,8 +229,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="350">
-            <caret line="120" column="5" lean-forward="true" selection-start-line="120" selection-start-column="5" selection-end-line="120" selection-end-column="5" />
+          <first_editor relative-caret-position="390">
+            <caret line="116" column="517" lean-forward="true" selection-start-line="116" selection-start-column="517" selection-end-line="116" selection-end-column="517" />
           </first_editor>
           <second_editor />
         </state>
