@@ -16,7 +16,7 @@ class FileRandomizer:
 
     def process(self, line):
         line = line.strip()
-        line = line.replace("#RND#",self.Rpg.generate_password())
+        line = line.replace("#RND#", self.Rpg.generate_password())
         return line
 
     def set_passwords(self):

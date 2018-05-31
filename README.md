@@ -2,12 +2,20 @@
 
 Generate cryptographically secure random passwords with specified character sets, patterns, or lengths.
 
-## TL;DR. How do I make passwords?
+## Quickstart: How do I make passwords?
+
+You have two tools: rpg and frpg.
+1. `rpg` generates a random password at the command line.
+1. `frpg` reads a file, and replaces instances of `#RND#` with a securely generated password. 
 
 ### Usage:
 
 ```
-prpg [character set options | magic class] [length | pattern]
+rpg [character set options | magic class] [length | pattern]
+```
+and 
+```
+frpg /path/to/file [character set options | magic class] [length | pattern]
 ```
 
 ### Examples
@@ -16,46 +24,71 @@ Here are examples for you, Captain Impatient...
 #### Random password for a website, and show the timing
 
 ```
-./prpg.py slut 16
+rpg slut 16
 ```
 
 #### Random MAC address:
 ```
-./prpg.py p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
+rpg p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
 ```
 
 ...or using a magic class
 
 ```
-  ./prpg.py mac
+rpg mac
 ```
 
+#### Create passwords in a file where the #RND# placeholder is
+
+Use the `strong` magic class
+
+```
+frpg /path/to/file strong
+``` 
+
+Do it the hard way:
+
+```
+frpg /path/to/file ul 21
+```
+
+Make crappy passwords in the file:
+
+```
+frpg /path/to/file d{4}
+```
+
+Make your users sorry they were ever born:
+
+```
+frpg /path/to/file painful
+```
 #### Random three word pass phrase:
 ```
-./prpg.py w 3
+rpg w 3
 ```
 
 #### Create a google-style password:
 
 ```
-./prpg.py google
+rpg google
 ```
 
 #### Create one that's strong and easy to do ona  phone
 ```
-./prpg.py iphone
+rpg iphone
 ```
 
 or
 
 ```
-./prpg.py android
+rpg android
 ```
 
 #### Escape the h so it starts with h
 
 ```
-./prpg.py p '\hu{12}' 
+rpg p '\hu{12}' 
 ```
 
 #### Character set options:
@@ -180,8 +213,9 @@ For your copy / paste pleasure.
 sudo su
 cd /usr/src/
 git clone https://github.com/mjmunger/pyrpg.git
-ln -s /usr/src/pyrpg/prpg.py /usr/local/bin/prpg
-chmod +x /usr/local/bin/prpg
+cd pyrpg
+chmod +x ./install.sh
+./install.sh
 exit
 ```
 

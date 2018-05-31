@@ -2,9 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4eeb7e6d-4480-4ca7-88a5-786be9a4d5ec" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/frpg.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/prpg/fileRandomizer.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/install.sh" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frpg.py" beforeDir="false" afterPath="$PROJECT_DIR$/frpg.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/prpg/fileRandomizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/prpg/fileRandomizer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/prpg/rpg.py" beforeDir="false" afterPath="$PROJECT_DIR$/prpg/rpg.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -31,8 +33,8 @@
       <file leaf-file-name="rpg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prpg/rpg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="146" column="61" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="61" />
+            <state relative-caret-position="633">
+              <caret line="377" selection-start-line="377" selection-end-line="377" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
@@ -40,11 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="frpg.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="install.sh" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/install.sh">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="225">
+              <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="frpg.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/frpg.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" selection-start-line="29" selection-end-line="29" />
+            <state relative-caret-position="480">
+              <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
               <folding>
                 <element signature="e#99#109#0" expanded="true" />
               </folding>
@@ -55,8 +66,8 @@
       <file leaf-file-name="fileRandomizer.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/prpg/fileRandomizer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+            <state relative-caret-position="270">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -69,11 +80,13 @@
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor />
+              <first_editor relative-caret-position="615">
+                <caret line="50" selection-start-line="50" selection-end-line="50" />
+              </first_editor>
               <second_editor />
             </state>
           </provider>
@@ -119,11 +132,12 @@
         <option value="$PROJECT_DIR$/prpg.py" />
         <option value="$PROJECT_DIR$/prpg/hackchecker.py" />
         <option value="$PROJECT_DIR$/prpg/loader.py" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/prpg/frpg.py" />
-        <option value="$PROJECT_DIR$/prpg/rpg.py" />
-        <option value="$PROJECT_DIR$/prpg/fileRandomizer.py" />
         <option value="$PROJECT_DIR$/frpg.py" />
+        <option value="$PROJECT_DIR$/prpg/fileRandomizer.py" />
+        <option value="$PROJECT_DIR$/prpg/rpg.py" />
+        <option value="$PROJECT_DIR$/install.sh" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -155,11 +169,6 @@
             <path>
               <item name="pyrpg" type="b2602c69:ProjectViewProjectNode" />
               <item name="pyrpg" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pyrpg" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pyrpg" type="462c0819:PsiDirectoryNode" />
-              <item name="prpg" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -272,14 +281,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/prpg/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -296,10 +297,20 @@
     <entry file="file://$PROJECT_DIR$/prpg/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/frpg.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="34" selection-start-line="32" selection-start-column="34" selection-end-line="32" selection-end-column="34" />
+          <folding>
+            <element signature="e#99#109#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/prpg/fileRandomizer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="32" lean-forward="true" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        <state relative-caret-position="270">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
@@ -308,21 +319,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/prpg/rpg.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="146" column="61" lean-forward="true" selection-start-line="146" selection-start-column="5" selection-end-line="146" selection-end-column="61" />
+        <state relative-caret-position="633">
+          <caret line="377" selection-start-line="377" selection-end-line="377" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frpg.py">
+    <entry file="file://$PROJECT_DIR$/install.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#99#109#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="225">
+          <caret line="15" column="12" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="615">
+            <caret line="50" selection-start-line="50" selection-end-line="50" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

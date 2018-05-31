@@ -375,7 +375,6 @@ For support, problems, and issues, file an issue on github:
                 print("Last pattern: %s" % p)
             chars.append(self.get_random_character(p))
 
-
             # Default is to ignore the item.
 
         return "".join(chars)

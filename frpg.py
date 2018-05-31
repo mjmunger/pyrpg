@@ -27,11 +27,10 @@ if len(options) ==1:
     show_help()
     exit(1)
 
-file = options.pop(0)
-file = options.pop(0)
+file = options.pop(1)
 r = rpg.Rpg(options)
 
-Randomizer = FileRandomizer(file,r)
+Randomizer = FileRandomizer(file, r)
 Randomizer.set_passwords()
 
 
