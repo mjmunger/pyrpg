@@ -2,6 +2,7 @@ import secrets
 import mmap
 import time
 import os
+import importlib
 
 
 class Rpg:
@@ -48,6 +49,20 @@ class Rpg:
 
     list_final_charset = []
 
+    recipes = {"mac": 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}',
+               "google": "l{16}",
+               "pin4": "d{4}",
+               "pin6": "d{6}",
+               "iphone": "l{4} l{4} l{4} l{4}",
+               "android": "l{4} l{4} l{4} l{4}",
+               "strong": "M{16}",
+               "ridiculous": "M{32}",
+               "ludicrous": "M{64}",
+               "painful": "M{128}"
+              }
+
+    request_is_magic = False
+
     password_length = 16
 
     debug = False
@@ -57,6 +72,7 @@ class Rpg:
     show_time = False
 
     password_pattern = None
+    character_set = None
 
     def __init__(self, options):
         self.start_time = time.time()
@@ -69,6 +85,12 @@ class Rpg:
             exit(1)
 
         charater_set = options[1]
+        self.character_set = charater_set
+
+        self.request_is_magic = True if charater_set in self.recipes else False
+        if self.request_is_magic:
+            # Nothing else to do
+            return
 
         self.use_upper = True if "u" in charater_set else False
         self.use_lower = True if "l" in charater_set else False
@@ -100,7 +122,10 @@ class Rpg:
             print("use_underline: %s" % self.use_underline)
             print("use_pattern: %s" % self.use_pattern)
 
+
         # Sanity checking
+
+
 
         if not len(options) == 3:
             self.error_out("You must specify a length or pattern for your password")
@@ -112,6 +137,7 @@ class Rpg:
             self.password_pattern = options[2]
         else:
             self.password_length = int(options[2])
+
 
     def error_out(self, message):
         print(message)
@@ -193,11 +219,31 @@ Special placeholders
 \    Escapes the proceeding character, and tells the generator to print it "as-is".
 {n}  Print the previous character n times.
 
+Magic classes
+
+The following magic classes are short hand expressions that will create
+random passwords according to a specific recipe.
+
+    google      Generate Google-style app passwords e.g, ofgl ruwd ngzs iphh
+    iphone      Generate passwords that are easy to enter on the default iPhone keyboard
+    android     Generate passwords that are easy to enter on the default Android keyboard
+    pin4        Generate a random 4-digit pin
+    pin6        Generate a random 6-digit pin
+    mac         Generate a random mac address
+    strong      Generate a strong password
+    ridiculous  Generate a ridiculous password
+    ludicrous   Generate a ludicrously strong password
+    painful     Really? Wow. 
+
 EXAMPLES
 
 Random MAC address:
 
   ./prpg.py p 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}'
+  
+  or using a receipe
+  
+  ./prpg.py mac
 
 Random three word pass phrase:
 
@@ -375,6 +421,11 @@ For support, problems, and issues, file an issue on github:
         return " ".join(words)
 
     def generate_password(self):
+
+        if self.request_is_magic:
+            self.use_pattern = True
+            self.password_pattern = self.recipes[self.character_set]
+
         if self.use_pattern:
             return self.generate_pattern_based_password()
 
