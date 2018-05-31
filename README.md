@@ -118,7 +118,7 @@ z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
 ### Random password for a website, and show the timing
 
 ```
-./prppg.py slut 16
+./prpg.py slut 16
 ```
 
 ### Random MAC address:
