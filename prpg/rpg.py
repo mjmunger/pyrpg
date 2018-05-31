@@ -241,7 +241,7 @@ Random MAC address:
 
   ./prpg.py p 'h{2}\:h{2}\:h{2}\:h{2}\:h{2}\:h{2}'
   
-  or using a receipe
+  or using a magic class
   
   ./prpg.py mac
 

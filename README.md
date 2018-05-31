@@ -4,34 +4,61 @@ Generate cryptographically secure random passwords with specified character sets
 
 ## TL;DR. How do I make passwords?
 
+### Usage:
+
+```
+prpg [character set options | magic class] [length | pattern]
+```
+
+### Examples
 Here are examples for you, Captain Impatient...
 
-### Random password for a website, and show the timing
+#### Random password for a website, and show the timing
 
 ```
 ./prpg.py slut 16
 ```
 
-### Random MAC address:
+#### Random MAC address:
 ```
 ./prpg.py p 'h{2}:h{2}:h{2}:h{2}:h{2}:h{2}' 
 ```
 
-### Random three word pass phrase:
+...or using a magic class
+
+```
+  ./prpg.py mac
+```
+
+#### Random three word pass phrase:
 ```
 ./prpg.py w 3
 ```
 
-### Escape the h so it starts with h
+#### Create a google-style password:
+
+```
+./prpg.py google
+```
+
+#### Create one that's strong and easy to do ona  phone
+```
+./prpg.py iphone
+```
+
+or
+
+```
+./prpg.py android
+```
+
+#### Escape the h so it starts with h
 
 ```
 ./prpg.py p '\hu{12}' 
 ```
- 
-## Usage:
-`prpg [character set options] [length | pattern]`
 
-### Character set options:
+#### Character set options:
 
 ```
 u    Include upper case characters: A-Z
@@ -43,14 +70,14 @@ m    Include the minus character: -
 n    Include the underscore character: _
 ```
 
-### Extended options:
+#### Extended options:
 ```
 w    Generate a password based on words
 p    Generate the password based on the given pattern (requires the pattern argument)
 e    Exclude look-alike characters (homoglyphs): 1iIO0
 ```
 
-### Fun stuff:
+#### Fun stuff:
 ```
 t    Show how long it took to generate the passwords.
 g    Show debugging information
@@ -62,7 +89,7 @@ w (word based password), the length argument will specify the number of words in
 
 When p is specified, the second argument must be a pattern, not a length. (See "Pattern" below).
 
-### Patterns:
+#### Patterns:
 
 The pattern defines the layout of the resulting password. Each character in the pattern dictates a character
 class that will be substituted at that position in the pattern. Characters that do not represent a given character
@@ -112,6 +139,24 @@ z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
 \    Escapes the proceeding character, and tells the generator to print it "as-is".
 {n}  Print the previous character n times.
 ```
+
+#### Magic classes
+
+The following magic classes are short hand expressions that will create
+random passwords according to a specific recipe.
+```
+google      Generate Google-style app passwords e.g, ofgl ruwd ngzs iphh
+iphone      Generate passwords that are easy to enter on the default iPhone keyboard
+android     Generate passwords that are easy to enter on the default Android keyboard
+pin4        Generate a random 4-digit pin
+pin6        Generate a random 6-digit pin
+mac         Generate a random mac address
+strong      Generate a strong password
+ridiculous  Generate a ridiculous password
+ludicrous   Generate a ludicrously strong password
+painful     Really? Wow. 
+```
+
 # Security
 
 "Cryptographically secure" is a somewhat relative term. The secrets module actually "[...provides access to the most secure source of randomness that your operating system provides](https://docs.python.org/3/library/secrets.html#random-numbers)". Thus, if you do not have a good source of randomness on your computer, you will not get good secure numbers. This is entirely dependent on [your chipset](https://software.intel.com/en-us/articles/intel-digital-random-number-generator-drng-software-implementation-guide).
