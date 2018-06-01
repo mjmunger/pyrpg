@@ -57,7 +57,8 @@ class Rpg:
                "strong": "M{16}",
                "ridiculous": "M{32}",
                "ludicrous": "M{64}",
-               "painful": "M{128}"
+               "painful": "M{128}",
+               "otp": "a{32}"
               }
 
     request_is_magic = False
@@ -219,6 +220,7 @@ Magic classes
 The following magic classes are short hand expressions that will create
 random passwords according to a specific recipe.
 
+    otp         Generate a base32 compliant secret for TOPT 2FA authentication
     google      Generate Google-style app passwords e.g, ofgl ruwd ngzs iphh
     iphone      Generate passwords that are easy to enter on the default iPhone keyboard
     android     Generate passwords that are easy to enter on the default Android keyboard
@@ -228,7 +230,7 @@ random passwords according to a specific recipe.
     strong      Generate a strong password
     ridiculous  Generate a ridiculous password
     ludicrous   Generate a ludicrously strong password
-    painful     Really? Wow. 
+    painful     Really? Wow.
 
 EXAMPLES
 

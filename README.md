@@ -178,6 +178,7 @@ z  Mixed case consonant: bcdfghjklmnpqrstvwxyz and BCDFGHJKLMNPQRSTVWXYZ
 The following magic classes are short hand expressions that will create
 random passwords according to a specific recipe.
 ```
+otp         Generate a base32 compliant secret for TOPT 2FA authentication
 google      Generate Google-style app passwords e.g, ofgl ruwd ngzs iphh
 iphone      Generate passwords that are easy to enter on the default iPhone keyboard
 android     Generate passwords that are easy to enter on the default Android keyboard
