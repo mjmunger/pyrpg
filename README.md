@@ -157,6 +157,7 @@ p  Punctuation: ,.;:
 a  lower-case alphanumeric: a-z and 0-9
 A  Upper-case alphanumeric: A-Z and 0-9
 M  Mixed-case alphanumeric: a-z, A-Z, and 0-9
+N  Mixed-case alphanumeric + symbols: a-z, A-Z, 0-9 + !@#$%^&*
 h  Lower case hex character: 0-9 and a-f
 H  Upper case hex character: 0-9 and A-F
 v  Lower case vowel: aeiou

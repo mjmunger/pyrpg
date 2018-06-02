@@ -55,10 +55,11 @@ class Rpg:
                "iphone": "l{4} l{4} l{4} l{4}",
                "android": "l{4} l{4} l{4} l{4}",
                "strong": "M{16}",
-               "ridiculous": "M{32}",
-               "ludicrous": "M{64}",
-               "painful": "M{128}",
-               "otp": "a{32}"
+               "ridiculous": "N{32}",
+               "ludicrous": "N{64}",
+               "painful": "N{128}",
+               "otp": "a{32}",
+               "banking": "N{16}"
               }
 
     request_is_magic = False
@@ -202,6 +203,7 @@ Combination and sub-class place holders:
 a  lower-case alphanumeric: a-z and 0-9
 A  Upper-case alphanumeric: A-Z and 0-9
 M  Mixed-case alphanumeric: a-z, A-Z, and 0-9
+N  Mixed-case alphanumeric + symbols: a-z, A-Z, 0-9 + !@#$%^&* 
 h  Lower case hex character: 0-9 and a-f
 H  Upper case hex character: 0-9 and A-F
 v  Lower case vowel: aeiou
@@ -227,6 +229,7 @@ random passwords according to a specific recipe.
     pin4        Generate a random 4-digit pin
     pin6        Generate a random 6-digit pin
     mac         Generate a random mac address
+    banking     Generate a random password suitable for protecting bank accounts.
     strong      Generate a strong password
     ridiculous  Generate a ridiculous password
     ludicrous   Generate a ludicrously strong password
@@ -311,6 +314,9 @@ For support, problems, and issues, file an issue on github:
 
         if p == "M":
             return secrets.choice(self.list_lower + self.list_digits + self.list_upper)
+
+        if p == "N":
+            return secrets.choice(self.list_lower + self.list_digits + self.list_upper + self.list_symbol)
 
         if p == "h":
             return secrets.choice(self.list_digits + self.list_lower[:6])
